@@ -301,10 +301,16 @@
                 onclick="location.href='https://github.com/'"
               >
                 Publication
-            </button>
+              </button>
             </div>
           </div>
         </div>
+      </div>
+      <div class="article-container" style="display: flex; justify-content: center; align-items: center;">
+        <button id="surprise-button" class="btn btn-color-2 project-btn">Click for a Surprise</button>
+        <img id="surprise-image" src="./assets/darsey.JPG" alt="Darsey Image" class="darsey-image" 
+        style="width: 300px; height: 300px; border-radius: 50%; object-fit: cover; display: none;"/>
+        <button id="stop-button" class="btn btn-color-2 project-btn" style="display: none;">Stop!</button>
       </div>
       <img
         src="./assets/arrow.png"
@@ -334,20 +340,36 @@
           <p><a href="https://www.linkedin.com/in/jojo-kim-aa665a263/">LinkedIn</a></p>
         </div>
       </div>
+
+      
+<script>
+  document.getElementById('surprise-button').addEventListener('click', function() {
+    var image = document.getElementById('surprise-image');
+    var button = document.getElementById('surprise-button');
+    var stopButton = document.getElementById('stop-button');
+
+    // Show the image and hide the button
+    image.style.display = 'block';
+    button.style.display = 'none';
+    stopButton.style.display = 'inline-block';  // Show the stop button
+  });
+
+  document.getElementById('stop-button').addEventListener('click', function() {
+    var image = document.getElementById('surprise-image');
+    var stopButton = document.getElementById('stop-button');
+    var surpriseButton = document.getElementById('surprise-button');
+    
+    // Remove the image and hide the stop button
+    image.style.display = 'none';
+    stopButton.style.display = 'none';
+    
+    // Show the original surprise button
+    surpriseButton.style.display = 'inline-block';
+  });
+</script>
+      
+
     </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <p>Copyright &#169; 2024 Jojo Kim. All Rights Reserved.</p>
-    </footer>
-    <script src="script.js"></script>
   </body>
 </html>
+
